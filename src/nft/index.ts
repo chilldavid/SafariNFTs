@@ -14,3 +14,9 @@ export type { NftTier } from "./tiers";
 
 export { generateCollectionMetadata, printCollectionSummary } from "./generate";
 export type { GenerateCollectionParams } from "./generate";
+
+export { createMerkleTree, mintCompressedNft, mintCompressedBatch, TREE_PRESETS } from "./compressed";
+export type { TreePreset, CreateMerkleTreeResult, MintCompressedNftParams, MintCompressedResult } from "./compressed";
+
+export { generateManifest, loadManifest, getManifestStats, claimToken, claimTokenCompressed, getNextAvailable, getNextAvailableInTier } from "./lazy-mint";
+export type { ManifestEntry, Manifest } from "./lazy-mint";

@@ -11,6 +11,10 @@
     "mint:collection": "ts-node src/scripts/create-collection.ts",
     "upload": "ts-node src/scripts/upload-metadata.ts",
     "mint:batch": "ts-node src/scripts/mint-collection-batch.ts",
+    "cnft:tree": "ts-node src/scripts/setup-tree.ts",
+    "cnft:mint": "ts-node src/scripts/mint-compressed-batch.ts",
+    "lazy:generate": "ts-node src/scripts/lazy-generate.ts",
+    "lazy:claim": "ts-node src/scripts/lazy-claim.ts",
     "check-balance": "ts-node src/scripts/check-balance.ts",
     "airdrop": "ts-node src/scripts/airdrop.ts"
   },
@@ -24,6 +28,11 @@
   "license": "MIT",
   "dependencies": {
     "@metaplex-foundation/js": "^0.20.1",
+    "@metaplex-foundation/mpl-bubblegum": "^5.0.2",
+    "@metaplex-foundation/umi": "^1.4.1",
+    "@metaplex-foundation/umi-bundle-defaults": "^1.4.1",
+    "@metaplex-foundation/umi-web3js-adapters": "^1.4.1",
+    "@solana/spl-account-compression": "^0.4.1",
     "@solana/web3.js": "^1.95.3",
     "dotenv": "^16.4.5"
   },
