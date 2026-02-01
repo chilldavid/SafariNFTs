@@ -10,6 +10,7 @@
     "mint": "ts-node src/scripts/mint-nft.ts",
     "mint:collection": "ts-node src/scripts/create-collection.ts",
     "upload": "ts-node src/scripts/upload-metadata.ts",
+    "mint:batch": "ts-node src/scripts/mint-collection-batch.ts",
     "check-balance": "ts-node src/scripts/check-balance.ts",
     "airdrop": "ts-node src/scripts/airdrop.ts"
   },

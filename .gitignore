@@ -9,6 +9,9 @@ dist/
 !package-lock.json
 !tsconfig.json
 
+# Mint results logs
+mint-results/
+
 # OS files
 .DS_Store
 Thumbs.db
