@@ -1,0 +1,34 @@
+{
+  "name": "safari-nfts",
+  "version": "1.0.0",
+  "description": "Create and manage NFTs on the Solana blockchain with safari-themed collections",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/index.ts",
+    "mint": "ts-node src/scripts/mint-nft.ts",
+    "mint:collection": "ts-node src/scripts/create-collection.ts",
+    "upload": "ts-node src/scripts/upload-metadata.ts",
+    "check-balance": "ts-node src/scripts/check-balance.ts",
+    "airdrop": "ts-node src/scripts/airdrop.ts"
+  },
+  "keywords": [
+    "solana",
+    "nft",
+    "metaplex",
+    "safari",
+    "blockchain"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@metaplex-foundation/js": "^0.20.1",
+    "@solana/web3.js": "^1.95.3",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
