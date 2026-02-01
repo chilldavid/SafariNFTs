@@ -1,5 +1,7 @@
 export {
   loadKeypairFromFile,
+  loadKeypairFromPrivateKey,
+  loadWallet,
   generateKeypair,
   createConnection,
   getBalance,

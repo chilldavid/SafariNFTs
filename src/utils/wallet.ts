@@ -1,4 +1,5 @@
 import { Keypair, Connection, LAMPORTS_PER_SOL } from "@solana/web3.js";
+import bs58 from "bs58";
 import { loadConfig } from "../config";
 import fs from "fs";
 
@@ -17,6 +18,28 @@ export function loadKeypairFromFile(filePath: string): Keypair {
   const raw = fs.readFileSync(filePath, "utf-8");
   const secretKey = Uint8Array.from(JSON.parse(raw));
   return Keypair.fromSecretKey(secretKey);
+}
+
+/**
+ * Load a Keypair from a base58-encoded private key string.
+ * This is the format used by Phantom and most Solana wallets when exporting.
+ */
+export function loadKeypairFromPrivateKey(privateKey: string): Keypair {
+  const decoded = bs58.decode(privateKey.trim());
+  return Keypair.fromSecretKey(decoded);
+}
+
+/**
+ * Load wallet from PRIVATE_KEY env var (base58) or fall back to WALLET_PATH file.
+ */
+export function loadWallet(): Keypair {
+  const config = loadConfig();
+
+  if (process.env.PRIVATE_KEY) {
+    return loadKeypairFromPrivateKey(process.env.PRIVATE_KEY);
+  }
+
+  return loadKeypairFromFile(config.walletPath);
 }
 
 /**
