@@ -1,5 +1,5 @@
 import { loadConfig } from "../config";
-import { createConnection, loadKeypairFromFile } from "../utils";
+import { createConnection, loadWallet } from "../utils";
 import {
   buildSafariMetadata,
   createMetaplexWithStorage,
@@ -12,7 +12,7 @@ import fs from "fs";
 async function main() {
   const config = loadConfig();
   const connection = createConnection();
-  const wallet = loadKeypairFromFile(config.walletPath);
+  const wallet = loadWallet();
   const isDevnet = config.cluster === "devnet";
 
   console.log(`Cluster: ${config.cluster}`);

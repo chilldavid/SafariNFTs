@@ -1,10 +1,10 @@
 import { loadConfig } from "../config";
-import { createConnection, loadKeypairFromFile, getBalance } from "../utils";
+import { createConnection, loadWallet, getBalance } from "../utils";
 
 async function main() {
   const config = loadConfig();
   const connection = createConnection();
-  const wallet = loadKeypairFromFile(config.walletPath);
+  const wallet = loadWallet();
 
   console.log(`Cluster:    ${config.cluster}`);
   console.log(`RPC URL:    ${config.rpcUrl}`);

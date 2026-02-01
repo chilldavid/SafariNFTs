@@ -1,7 +1,7 @@
 import { loadConfig } from "../config";
 import {
   createConnection,
-  loadKeypairFromFile,
+  loadWallet,
   requestAirdrop,
   getBalance,
 } from "../utils";
@@ -15,7 +15,7 @@ async function main() {
   }
 
   const connection = createConnection();
-  const wallet = loadKeypairFromFile(config.walletPath);
+  const wallet = loadWallet();
 
   const amount = parseFloat(process.argv[2] || "1");
 

@@ -1,11 +1,11 @@
 import { loadConfig } from "../config";
-import { createConnection, loadKeypairFromFile, getBalance } from "../utils";
+import { createConnection, loadWallet, getBalance } from "../utils";
 import { createCollection } from "../nft";
 
 async function main() {
   const config = loadConfig();
   const connection = createConnection();
-  const wallet = loadKeypairFromFile(config.walletPath);
+  const wallet = loadWallet();
   const isDevnet = config.cluster === "devnet";
 
   console.log(`Cluster: ${config.cluster}`);
